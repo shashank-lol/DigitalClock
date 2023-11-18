@@ -1,7 +1,12 @@
-package com.mycompany.digital.clock;
-
-
-
+package clock;
+//import clock.AlarmClock;
+//import clock.Configure;
+//import clock.GUITimer;
+//import clock.JFontChooser;
+//import clock.Stopwatch;
+//import clock.Time;
+//import clock.Timezone;
+//import clock.stopwatch_backend;
 import java.awt.Color;
 import java.util.Date;
 import java.util.Calendar;
@@ -21,7 +26,7 @@ import java.awt.event.ActionEvent;
 import java.sql.Time;
 
 
-public class NewJFrame extends javax.swing.JFrame {
+public class Clock extends javax.swing.JFrame {
     public Timezone tz;
     private Time t;    
     private Date date;
@@ -37,7 +42,7 @@ public class NewJFrame extends javax.swing.JFrame {
     boolean stopPressed = false;
     int count = 0;
     
-    public NewJFrame() {
+    public Clock() {
         
         initComponents(); 
         
@@ -372,20 +377,23 @@ public class NewJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Clock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Clock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Clock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Clock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame().setVisible(true);
+                new Clock().setVisible(true);
             }
         });
     }
@@ -417,3 +425,26 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem text_colour;
     private javax.swing.JComboBox<String> time_zone;
 }
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // End of variables declaration//GEN-END:variables
+
