@@ -4,11 +4,12 @@ import java.util.Calendar;
 import javax.swing.JRadioButtonMenuItem;
 
 
-public class Time {
+public class DigitalTime {
     
     private int hour,minute,second,AM_PM,year,month,day;
     private String time;
-    Time(Calendar cal)
+    
+    DigitalTime(Calendar cal)
     {
         hour = cal.get(Calendar.HOUR);
         minute = cal.get(Calendar.MINUTE);

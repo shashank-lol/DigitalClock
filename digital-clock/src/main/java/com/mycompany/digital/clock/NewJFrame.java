@@ -1,12 +1,7 @@
-package clock;
-//import clock.AlarmClock;
-//import clock.Configure;
-//import clock.GUITimer;
-//import clock.JFontChooser;
-//import clock.Stopwatch;
-//import clock.Time;
-//import clock.Timezone;
-//import clock.stopwatch_backend;
+package com.mycompany.digital.clock;
+
+
+
 import java.awt.Color;
 import java.util.Date;
 import java.util.Calendar;
@@ -26,9 +21,9 @@ import java.awt.event.ActionEvent;
 import java.sql.Time;
 
 
-public class Clock extends javax.swing.JFrame {
+public class NewJFrame extends javax.swing.JFrame {
     public Timezone tz;
-    private Time t;    
+    private DigitalTime t;    
     private Date date;
     private Configure config;
     private Color background,text,frame;
@@ -42,7 +37,7 @@ public class Clock extends javax.swing.JFrame {
     boolean stopPressed = false;
     int count = 0;
     
-    public Clock() {
+    public NewJFrame() {
         
         initComponents(); 
         
@@ -64,7 +59,7 @@ public class Clock extends javax.swing.JFrame {
                 {
                     tz = new Timezone(time_zone); //get the selected time zone
                     Calendar cal = new GregorianCalendar(tz.getTimeZone()); //get details of that time zone     
-                    t = new Time(cal); //get current time
+                    t = new DigitalTime(cal); //get current time
                     clock.setText(t.setTime(jRadioButton24,jRadioButton12)); //set time
                     date = new Date(); //get date
                     date_field.setText(" " + date);//set date                
@@ -129,17 +124,17 @@ public class Clock extends javax.swing.JFrame {
         jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(7, 6, 5));
+        setBackground(new java.awt.Color(235, 235, 235));
 
-        jPanel1.setBackground(Color.BLACK);
+        jPanel1.setBackground(Color.lightGray);
 
         clock.setFont(new java.awt.Font("DS-Digital", 0, 100)); // NOI18N
-        clock.setForeground(new java.awt.Color(0, 153, 255));
+        clock.setForeground(new java.awt.Color(0, 0, 0));
         clock.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        clock.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(209, 131, 131), 4));
+        clock.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(10, 10, 10), 8));
 
         date_field.setFont(new java.awt.Font("DS-Digital", 1, 24)); // NOI18N
-        date_field.setForeground(new java.awt.Color(255, 245, 245));
+        date_field.setForeground(new java.awt.Color(15, 15, 15));
 
         jButton2.setFont(new Font("Sitka Text", Font.BOLD, 15)); // NOI18N
         jButton2.setForeground(new java.awt.Color(31, 7, 7));
@@ -159,7 +154,7 @@ public class Clock extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Noto Sans CJK TC Medium", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(254, 242, 242));
+        jLabel1.setForeground(new java.awt.Color(12, 12, 12));
         jLabel1.setText("Select time zone");
 
         stopAlarm.setFont(new Font("Sitka Text", Font.BOLD, 15)); // NOI18N
@@ -183,7 +178,7 @@ public class Clock extends javax.swing.JFrame {
         JButton btnNewButton = new JButton("TIMER");
         btnNewButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		GUITimer t = new GUITimer();
+        		DigitalTimer t = new DigitalTimer();
         		t.setVisible(true);
         	}
         });
@@ -377,23 +372,20 @@ public class Clock extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Clock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Clock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Clock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Clock.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Clock().setVisible(true);
+                new NewJFrame().setVisible(true);
             }
         });
     }
@@ -425,26 +417,3 @@ public class Clock extends javax.swing.JFrame {
     private javax.swing.JMenuItem text_colour;
     private javax.swing.JComboBox<String> time_zone;
 }
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    // End of variables declaration//GEN-END:variables
-
